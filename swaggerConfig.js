@@ -4,8 +4,8 @@ const options = {
     definition: {
         openapi: '3.0.0',
         info: {
-            title: 'Exemplo de API',
-            description: 'Uma API de exemplo',
+            title: 'API de Contatos',
+            description: 'Uma API para gerenciar usuários',
             version: '1.0.0',
         },
         components: {
