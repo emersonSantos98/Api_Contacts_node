@@ -4,7 +4,7 @@ if (result.error) {
     throw result.error;
 }
 
-const App = require("./app").server
+const App = require("./Api/app").server
 
 const port = process.env.PORT || 3030;
 
