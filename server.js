@@ -1,8 +1,4 @@
-const dotenv = require('dotenv');
-const result = dotenv.config();
-if (result.error) {
-    throw result.error;
-}
+require('dotenv').config();
 
 const App = require("./app").server
 
