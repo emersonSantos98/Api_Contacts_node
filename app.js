@@ -3,6 +3,11 @@ const cors = require("cors");
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swaggerConfig');
 const routes = require('./Api/routes')
+const morgan = require("morgan");
+require('dotenv').config();
+
+
+
 
 class App {
     server;
@@ -23,6 +28,12 @@ class App {
         this.server.use(express.urlencoded({
             extended: true
         }))
+
+
+
+        if (process.env.NODE_ENV === 'development') {
+            this.server.use(morgan('dev'));
+        }
 
 
         this.server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
