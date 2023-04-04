@@ -62,7 +62,7 @@ const options = {
         },
         servers: [
             {
-                url: 'http://localhost:3030/',
+                url: `${process.env.BASE_URL}/api/v1`,
             },
         ],
     },

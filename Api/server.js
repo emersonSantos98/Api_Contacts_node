@@ -1,8 +1,12 @@
+const dotenv = require('dotenv');
+const result = dotenv.config();
+if (result.error) {
+    throw result.error;
+}
+
 const App = require("./app").server
 
-
-const port = 3030;
-
+const port = process.env.PORT || 3030;
 
 App.get('/', function (req, res) {
     res.redirect('/api-docs');
@@ -12,4 +16,4 @@ App.get('/', function (req, res) {
 App.listen(port, (err) => {
     if (err) console.log("Erro na configuração do servidor")
     console.log(`Aplicativo rodando na porta ${port}.`);
-})
+});
