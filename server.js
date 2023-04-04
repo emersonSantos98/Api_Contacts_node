@@ -5,7 +5,7 @@ const App = require("./app").server
 const port = process.env.PORT || 3030;
 
 App.get('/', function (req, res) {
-    res.redirect('/api-docs');
+    res.redirect('/api/v1/api-docs');
 });
 
 

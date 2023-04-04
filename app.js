@@ -36,7 +36,7 @@ class App {
         }
 
 
-        this.server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+        this.server.use('/api/v1/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
     }
 
