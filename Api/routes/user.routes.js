@@ -3,7 +3,7 @@ const router = require("express").Router();
 
 /**
  * @swagger
- * api/v1/getUsersAll:
+ * /api/v1/getUsersAll:
  *   get:
  *     summary: Retorna todos os usuários
  *     tags:

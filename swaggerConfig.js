@@ -5,10 +5,10 @@ const options = {
         openapi: '3.0.0',
         info: {
             title: 'API de Contatos',
-            description: 'Uma API para gerenciar usuários',
+            description: 'Uma API para gerenciar contatos',
             version: '1.0.0',
             contact: {
-                name: "Emerson Matos",
+                name: "Emerson Santos",
                 email: "emerson.matosokl10@gmail.com",
                 url: "https://emersonsantos98.github.io/"
             }
@@ -67,7 +67,8 @@ const options = {
         },
         servers: [
             {
-                url: `${process.env.BASE_URL}/api/v1`,
+                url: `${process.env.BASE_URL}`,
+
             },
         ],
     },
