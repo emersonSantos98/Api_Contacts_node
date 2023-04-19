@@ -1,16 +1,16 @@
-const UsersController = require('../controllers/UsersController')
+ const ContactsController = require('../controllers/ContactsController')
 const router = require("express").Router();
 
 /**
  * @swagger
- * /api/v1/getUsersAll:
+ * /api/v1/contacts/getContactsAll:
  *   get:
- *     summary: Retorna todos os usuários
+ *     summary: Retorna todos os contatos
  *     tags:
- *       - Usuários
+ *       - Contatos
  *     responses:
  *       200:
- *         description: Lista de usuários
+ *         description: Lista de contatos
  *         content:
  *           application/json:
  *             schema:
@@ -18,23 +18,23 @@ const router = require("express").Router();
  *               items:
  *                 $ref: '#/components/schemas/User'
  */
-router.get("/getUsersAll", UsersController.getUsersAll)
+router.get("/getContactsAll", ContactsController.getContactsAll)
 
 
 /**
  * @swagger
- * /api/v1/getUserById/{id}:
+ * /api/v1/contacts/getContactsById/{id}:
  *   get:
- *     summary: Retorna um usuário específico
+ *     summary: Retorna um contato  específico
  *     tags:
- *       - Usuários
+ *       - Contatos
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: ID do usuário
+ *         description: ID do contato a ser retornado
  *     responses:
  *       200:
  *         description: Usuário
@@ -43,18 +43,18 @@ router.get("/getUsersAll", UsersController.getUsersAll)
  *             schema:
  *               $ref: '#/components/schemas/User'
  */
-router.get("/getUserById/:id", UsersController.getUserById)
+router.get("/getContactsById/:id", ContactsController.getContactsById )
 
 
 /**
  * @swagger
- * /api/v1/createUser:
+ * /api/v1/contacts/createContacts:
  *   post:
- *     summary: Cria um novo usuário
+ *     summary: Cria um novo contato
  *     tags:
- *       - Usuários
+ *       - Contatos
  *     requestBody:
- *       description: Objeto de usuário a ser criado
+ *       description: Objeto de contato a ser criado
  *       required: true
  *       content:
  *         application/json:
@@ -62,7 +62,7 @@ router.get("/getUserById/:id", UsersController.getUserById)
  *             $ref: '#/components/schemas/User'
  *     responses:
  *       201:
- *         description: Usuário criado com sucesso
+ *         description: Contato criado com sucesso
  *         content:
  *           application/json:
  *             schema:
@@ -70,25 +70,25 @@ router.get("/getUserById/:id", UsersController.getUserById)
  *       400:
  *         description: Requisição inválida
  */
-router.post("/createUser", UsersController.createUser)
+router.post("/createContacts", ContactsController.createContacts)
 
 
 /**
  * @swagger
- * /api/v1/updateUser/{id}:
+ * /api/v1/contacts/updateContacts/{id}:
  *   put:
- *     summary: Atualiza um usuário existente
+ *     summary: Atualiza um contato existente
  *     tags:
- *       - Usuários
+ *       - Contatos
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
- *         description: ID do usuário a ser atualizado
+ *         description: ID do contato a ser atualizado
  *         schema:
  *           type: integer
  *     requestBody:
- *       description: Objeto de usuário atualizado
+ *       description: Objeto de contato atualizado
  *       required: true
  *       content:
  *         application/json:
@@ -96,7 +96,7 @@ router.post("/createUser", UsersController.createUser)
  *             $ref: '#/components/schemas/User'
  *     responses:
  *       200:
- *         description: Usuário atualizado com sucesso
+ *         description: Contato atualizado com sucesso
  *         content:
  *           application/json:
  *             schema:
@@ -106,31 +106,31 @@ router.post("/createUser", UsersController.createUser)
  *       404:
  *         description: Usuário não encontrado
  */
-router.put("/updateUser/:id", UsersController.updateUser)
+router.put("/updateContacts/:id", ContactsController.updateContacts)
 
 
 /**
  * @swagger
- * /api/v1/deleteUser/{id}:
+ * /api/v1/contacts/deleteContacts/{id}:
  *   delete:
- *     summary: Remove um usuário existente
+ *     summary: Remove um contato existente
  *     tags:
- *       - Usuários
+ *       - Contatos
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
- *         description: ID do usuário a ser removido
+ *         description: ID do contatos a ser removido
  *         schema:
  *           type: integer
  *     responses:
  *       200:
- *         description: Usuário removido com sucesso
+ *         description: Contato removido com sucesso
  *       400:
  *         description: Requisição inválida
  *       404:
  *         description: Usuário não encontrado
  */
-router.delete("/deleteUser/:id", UsersController.deleteUser)
+router.delete("/deleteContacts/:id", ContactsController.deleteContacts )
 
 module.exports = router

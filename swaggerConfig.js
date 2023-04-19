@@ -15,7 +15,8 @@ const options = {
         },
         components: {
             schemas: {
-                User: {
+                Users:
+                    {
                     type: 'object',
                     properties: {
                         id: {

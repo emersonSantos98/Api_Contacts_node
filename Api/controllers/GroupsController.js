@@ -1,43 +1,43 @@
 const database = require('../models')
 
 
-class UsersController {
-    static async getUsersAll(req, res){
+class GroupsController {
+    static async getGroupsAll(req, res){
         try {
-            const allUsers = await database.Users.findAll()
-            return res.status(200).json(allUsers)
+            const allGroups = await database.Groups.findAll()
+            return res.status(200).json(allGroups)
         } catch (error) {
             return res.status(500).json(error.message)
         }
     }
 
-    static async getUserById(req, res){
+    static async getGroupsById(req, res){
         try {
             const {id} = req.params
-            const User = await database.Users.findOne({where: {id: Number(id)}})
-            return res.status(200).json(User)
+            const Groups = await database.Groups.findOne({where: {id: Number(id)}})
+            return res.status(200).json(Groups)
         } catch (error) {
             return res.status(500).json(error.message)
         }
     }
 
-    static async createUser(req, res) {
+    static async createGroups(req, res) {
         try {
-            const newUser = req.body
-            const createdUser = await database.Users.create(newUser)
-            return res.status(200).json(createdUser)
+            const newGroups= req.body
+            const createdGroups= await database.Groups.create(newGroups)
+            return res.status(200).json(createdGroups)
 
         } catch (error) {
             return res.status(500).json(error.message)
         }
     }
 
-    static async updateUser(req, res) {
+    static async updateGroups(req, res) {
         try {
             const {id} = req.params
-            const newUser = req.body
+            const newGroups= req.body
             await database.User.update(newUser, {where: {id: Number(id)}})
-            const updatedUser = await database.Users.findOne({where: {id: Number(id)}})
+            const updatedGroups= await database.Groups.findOne({where: {id: Number(id)}})
             return res.status(200).json(updatedUser)
 
         } catch (error) {
@@ -45,10 +45,10 @@ class UsersController {
         }
     }
 
-    static async deleteUser(req, res) {
+    static async deleteGroups(req, res) {
         try {
             const {id} = req.params
-            await database.Users.destroy({where: {id: Number(id)}})
+            await database.Groups.destroy({where: {id: Number(id)}})
             return res.status(200).json({message: `id ${id} deletado`})
 
         } catch (error) {
@@ -57,4 +57,4 @@ class UsersController {
     }
 }
 
-module.exports = UsersController
+module.exports = GroupsController
