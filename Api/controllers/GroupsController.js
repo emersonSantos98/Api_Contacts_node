@@ -12,10 +12,12 @@ class GroupsController {
     }
 
     static async getGroupsById(req, res){
+        console.log('res', res)
+        console.log('req', req)
         try {
             const {id} = req.params
-            const Groups = await database.Groups.findOne({where: {id: Number(id)}})
-            return res.status(200).json(Groups)
+            const Group = await database.Groups.findOne({where: {id: Number(id)}})
+            return res.status(200).json(Group)
         } catch (error) {
             return res.status(500).json(error.message)
         }
@@ -35,10 +37,10 @@ class GroupsController {
     static async updateGroups(req, res) {
         try {
             const {id} = req.params
-            const newGroups= req.body
-            await database.User.update(newUser, {where: {id: Number(id)}})
-            const updatedGroups= await database.Groups.findOne({where: {id: Number(id)}})
-            return res.status(200).json(updatedUser)
+            const newGroups = req.body
+            await database.Groups.update(newGroups, {where: {id: Number(id)}})
+            const updatedGroups = await database.Groups.findOne({where: {id: Number(id)}})
+            return res.status(200).json(updatedGroups)
 
         } catch (error) {
             return res.status(500).json(error.message)

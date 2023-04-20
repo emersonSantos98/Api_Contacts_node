@@ -15,6 +15,8 @@ const router = require("express").Router();
  *           application/json:
  *             schema:
  *               type: array
+ *               items:
+ *               $ref: '#/components/schemas/Groups'
  */
 router.get("/getGroupsAll", GroupsController.getGroupsAll)
 
@@ -38,13 +40,15 @@ router.get("/getGroupsAll", GroupsController.getGroupsAll)
  *         description: Grupo retornado com sucesso
  *         content:
  *           application/json:
+ *           schema:
+ *           $ref: '#/components/schemas/Groups'
  */
 router.get("/getGroupsById/:id", GroupsController.getGroupsById)
 
 
 /**
  * @swagger
- * /api/v1/groups/createUser:
+ * /api/v1/groups/createGroups:
  *   post:
  *     summary: Cria um novo grupo
  *     tags:
@@ -63,13 +67,14 @@ router.get("/getGroupsById/:id", GroupsController.getGroupsById)
  *           application/json:
  *       400:
  *         description: Requisição inválida
+ *         $ref: '#/components/schemas/Groups'
  */
 router.post("/createGroups", GroupsController.createGroups)
 
 
 /**
  * @swagger
- * /api/v1/groups/updateUser/{id}:
+ * /api/v1/groups/updateGroups/{id}:
  *   put:
  *     summary: Atualiza um grupos existente
  *     tags:
@@ -97,13 +102,14 @@ router.post("/createGroups", GroupsController.createGroups)
  *         description: Requisição inválida
  *       404:
  *         description: Usuário não encontrado
+ *         $ref: '#/components/schemas/Groups'
  */
 router.put("/updateGroups/:id", GroupsController.updateGroups)
 
 
 /**
  * @swagger
- * /api/v1/groups/deleteUser/{id}:
+ * /api/v1/groups/deleteGroups/{id}:
  *   delete:
  *     summary: Remove um grupos existente
  *     tags:
@@ -122,6 +128,7 @@ router.put("/updateGroups/:id", GroupsController.updateGroups)
  *         description: Requisição inválida
  *       404:
  *         description: Grupo não encontrado
+ *         $ref: '#/components/schemas/Groups'
  */
 router.delete("/deleteGroups/:id", GroupsController.deleteGroups)
 

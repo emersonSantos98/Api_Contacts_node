@@ -16,7 +16,7 @@ const router = require("express").Router();
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/User'
+ *                 $ref: '#/components/schemas/Contacts'
  */
 router.get("/getContactsAll", ContactsController.getContactsAll)
 
@@ -41,7 +41,7 @@ router.get("/getContactsAll", ContactsController.getContactsAll)
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Contacts'
  */
 router.get("/getContactsById/:id", ContactsController.getContactsById )
 
@@ -66,7 +66,7 @@ router.get("/getContactsById/:id", ContactsController.getContactsById )
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Contacts'
  *       400:
  *         description: Requisição inválida
  */
@@ -93,7 +93,7 @@ router.post("/createContacts", ContactsController.createContacts)
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/User'
+ *             $ref: '#/components/schemas/Contacts'
  *     responses:
  *       200:
  *         description: Contato atualizado com sucesso
@@ -130,6 +130,10 @@ router.put("/updateContacts/:id", ContactsController.updateContacts)
  *         description: Requisição inválida
  *       404:
  *         description: Usuário não encontrado
+ *         content:
+ *         application/json:
+ *         schema:
+ *         $ref: '#/components/schemas/Contacts'
  */
 router.delete("/deleteContacts/:id", ContactsController.deleteContacts )
 

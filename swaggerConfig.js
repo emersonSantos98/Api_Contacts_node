@@ -15,8 +15,7 @@ const options = {
         },
         components: {
             schemas: {
-                Users:
-                    {
+                Users: {
                     type: 'object',
                     properties: {
                         id: {
@@ -45,11 +44,6 @@ const options = {
                             description: 'Senha do usuário',
                             example: '123456',
                         },
-                        role: {
-                            type: 'string',
-                            description: 'Função do usuário',
-                            example: 'admin',
-                        },
                         createdAt: {
                             type: 'string',
                             format: 'date-time',
@@ -60,6 +54,99 @@ const options = {
                             type: 'string',
                             format: 'date-time',
                             description: 'Data da última atualização do usuário',
+                            example: '2022-05-01T14:00:00Z',
+                        },
+                    },
+                },
+                Contacts: {
+                    type: 'object',
+                    properties: {
+                        id: {
+                            type: 'integer',
+                            format: 'int64',
+                            description: 'ID do contato',
+                            example: 1,
+                        },
+                        name: {
+                            type: 'string',
+                            description: 'Nome do contato',
+                            example: 'Jhon Doe',
+                        },
+                        company: {
+                            type: 'string',
+                            description: 'Empresa do contato',
+                            example: 'Empresa',
+                        },
+                        email: {
+                            type: 'string',
+                            description: 'E-mail do contato',
+                            example: 'jhon_doe@gmail.com',
+                        },
+                        telefone: {
+                            type: 'string',
+                            description: 'Telefone do contato',
+                            example: '123456789',
+                        },
+                        titulo: {
+                            type: 'string',
+                            description: 'Titulo do contato',
+                            example: 'Gerente',
+                        },
+                        photo: {
+                            type: 'string',
+                            description: 'Foto do contato',
+                            example: 'https://www.google.com.br',
+                        },
+                        groupId: {
+                            type: 'integer',
+                            format: 'int64',
+                            description: 'ID do grupo',
+                            example: 1,
+                        },
+                        userId: {
+                            type: 'integer',
+                            format: 'int64',
+                            description: 'ID do usuário',
+                            example: 1,
+                        },
+                        createdAt: {
+                            type: 'string',
+                            format: 'date-time',
+                            description: 'Data de criação do contato',
+                            example: '2022-05-01T12:00:00Z',
+                        },
+                        updatedAt: {
+                            type: 'string',
+                            format: 'date-time',
+                            description: 'Data da última atualização do contato',
+                            example: '2022-05-01T14:00:00Z',
+                        },
+                    },
+                },
+                Groups: {
+                    type: 'object',
+                    properties: {
+                        id: {
+                            type: 'integer',
+                            format: 'int64',
+                            description: 'ID do grupo',
+                            example: 1,
+                        },
+                        name: {
+                            type: 'string',
+                            description: 'Nome do grupo',
+                            example: 'Grupo 1',
+                        },
+                        createdAt: {
+                            type: 'string',
+                            format: 'date-time',
+                            description: 'Data de criação do grupo',
+                            example: '2022-05-01T12:00:00Z',
+                        },
+                        updatedAt: {
+                            type: 'string',
+                            format: 'date-time',
+                            description: 'Data da última atualização do grupo',
                             example: '2022-05-01T14:00:00Z',
                         },
                     },
