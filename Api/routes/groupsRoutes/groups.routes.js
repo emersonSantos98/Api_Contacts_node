@@ -1,9 +1,9 @@
- const GroupsController = require('../controllers/GroupsController')
+ const GroupsController = require('../../controllers/GroupsControllers/GroupsController')
 const router = require("express").Router();
 
 /**
  * @swagger
- * /api/v1/groups/getGroupsAll:
+ * /api/v1/groupsRoutes/getGroupsAll:
  *   get:
  *     summary: Retorna todos os Grupos
  *     tags:
@@ -23,9 +23,9 @@ router.get("/getGroupsAll", GroupsController.getGroupsAll)
 
 /**
  * @swagger
- * /api/v1/groups/getGroupsById/{id}:
+ * /api/v1/groupsRoutes/getGroupsById/{id}:
  *   get:
- *     summary: Retorna um grupo específico
+ *     summary: Retorna um groupsRoutes específico
  *     tags:
  *       - Grupos
  *     parameters:
@@ -34,7 +34,7 @@ router.get("/getGroupsAll", GroupsController.getGroupsAll)
  *         schema:
  *           type: integer
  *         required: true
- *         description: ID do grupo a ser retornado
+ *         description: ID do groupsRoutes a ser retornado
  *     responses:
  *       200:
  *         description: Grupo retornado com sucesso
@@ -48,13 +48,13 @@ router.get("/getGroupsById/:id", GroupsController.getGroupsById)
 
 /**
  * @swagger
- * /api/v1/groups/createGroups:
+ * /api/v1/groupsRoutes/createGroups:
  *   post:
- *     summary: Cria um novo grupo
+ *     summary: Cria um novo groupsRoutes
  *     tags:
  *       - Grupos
  *     requestBody:
- *       description: Objeto de grupo a ser criado
+ *       description: Objeto de groupsRoutes a ser criado
  *       required: true
  *       content:
  *         application/json:
@@ -74,7 +74,7 @@ router.post("/createGroups", GroupsController.createGroups)
 
 /**
  * @swagger
- * /api/v1/groups/updateGroups/{id}:
+ * /api/v1/groupsRoutes/updateGroups/{id}:
  *   put:
  *     summary: Atualiza um grupos existente
  *     tags:
@@ -109,7 +109,7 @@ router.put("/updateGroups/:id", GroupsController.updateGroups)
 
 /**
  * @swagger
- * /api/v1/groups/deleteGroups/{id}:
+ * /api/v1/groupsRoutes/deleteGroups/{id}:
  *   delete:
  *     summary: Remove um grupos existente
  *     tags:
@@ -118,7 +118,7 @@ router.put("/updateGroups/:id", GroupsController.updateGroups)
  *       - in: path
  *         name: id
  *         required: true
- *         description: ID do grupo a ser removido
+ *         description: ID do groupsRoutes a ser removido
  *         schema:
  *           type: integer
  *     responses:

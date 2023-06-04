@@ -100,7 +100,7 @@ const options = {
                         groupId: {
                             type: 'integer',
                             format: 'int64',
-                            description: 'ID do grupo',
+                            description: 'ID do groupsRoutes',
                             example: 1,
                         },
                         userId: {
@@ -129,28 +129,72 @@ const options = {
                         id: {
                             type: 'integer',
                             format: 'int64',
-                            description: 'ID do grupo',
+                            description: 'ID do groupsRoutes',
                             example: 1,
                         },
                         name: {
                             type: 'string',
-                            description: 'Nome do grupo',
+                            description: 'Nome do groupsRoutes',
                             example: 'Grupo 1',
                         },
                         createdAt: {
                             type: 'string',
                             format: 'date-time',
-                            description: 'Data de criação do grupo',
+                            description: 'Data de criação do groupsRoutes',
                             example: '2022-05-01T12:00:00Z',
                         },
                         updatedAt: {
                             type: 'string',
                             format: 'date-time',
-                            description: 'Data da última atualização do grupo',
+                            description: 'Data da última atualização do groupsRoutes',
                             example: '2022-05-01T14:00:00Z',
                         },
                     },
                 },
+                Auth: {
+                    type: 'object',
+                    properties: {
+                        user: {
+                            type: 'object',
+                            properties: {
+                                id: {
+                                    type: 'integer',
+                                    format: 'int64',
+                                    description: 'ID do usuário',
+                                    example: 1,
+                                },
+                                firstName: {
+                                    type: 'string',
+                                    description: 'Primeiro nome do usuário',
+                                    example: 'João',
+                                },
+                                lastName: {
+                                    type: 'string',
+                                    description: 'Sobrenome do usuário',
+                                    example: 'Silva',
+                                },
+                                email: {
+                                    type: 'string',
+                                    description: 'E-mail do usuário',
+                                    example: 'joão@gmail.com',
+                                },
+                                createdAt: {
+                                    type: 'string',
+                                    format: 'date-time',
+                                    description: 'Data de criação do usuário',
+                                    example: '2022-05-01T12:00:00Z',
+                                },
+                                updatedAt: {
+                                    type: 'string',
+                                    format: 'date-time',
+                                    description: 'Data da última atualização do usuário',
+                                    example: '2022-05-01T14:00:00Z',
+                                },
+                            },
+                        },
+
+                    }
+                }
             },
         },
         servers: [
